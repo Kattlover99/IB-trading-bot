@@ -3,9 +3,11 @@ from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
 from ibapi.order import *
 
+#import threading
 import threading
 import time
 
+#import IBapi
 class IBapi(EWrapper, EClient):
 	
 	def __init__(self):
@@ -37,6 +39,7 @@ def FX_order(symbol):
 	contract.currency = symbol[3:]
 	return contract
 
+# connect IBapi connector
 app = IBapi()
 app.connect('127.0.0.1', 7497, 123)
 
